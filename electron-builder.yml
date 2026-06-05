@@ -12,7 +12,7 @@ extraResources:
     to: docs/FlowClip_User_Guide.pdf
   - from: docs/FlowClip-发布说明.md
     to: docs/FlowClip-发布说明.md
-asar: true
+asar: false
 win:
   target:
     - target: nsis

@@ -6,6 +6,14 @@
     "name": "FlowClip"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LYC1197060211/FlowClip.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LYC1197060211/FlowClip/issues"
+  },
+  "homepage": "https://github.com/LYC1197060211/FlowClip#readme",
   "main": "out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev",
