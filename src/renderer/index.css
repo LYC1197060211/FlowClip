@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: 255 255 255;
+  --surface-2: 243 244 246;
+  --card: 255 255 255;
+  --ink: 17 17 17;
+  --ink-soft: 75 85 99;
+  --ink-muted: 156 163 175;
+  --line: 229 231 235;
+  --accent: 15 118 110;
+  --accent-soft: 204 251 241;
+}
+
+.dark {
+  --surface: 38 38 40;
+  --surface-2: 30 30 32;
+  --card: 54 54 58;
+  --ink: 236 236 239;
+  --ink-soft: 176 176 182;
+  --ink-muted: 128 128 136;
+  --line: 64 64 70;
+  --accent: 45 212 191;
+  --accent-soft: 19 78 74;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: transparent;
+  padding: 8px;
+  overflow: hidden;
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: rgb(var(--ink));
+  user-select: none;
+}
+
+body::selection {
+  background: rgb(var(--accent-soft));
+  color: rgb(var(--ink));
+}
+
+/* Window drag regions (frameless window). */
+.drag {
+  -webkit-app-region: drag;
+}
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* Allow text selection inside editable fields and result text. */
+input,
+textarea,
+.selectable {
+  user-select: text;
+}
+
+/* Thin, theme-aware scrollbars. */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--line));
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

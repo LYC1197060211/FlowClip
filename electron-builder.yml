@@ -1,0 +1,30 @@
+appId: com.flowclip.app
+productName: FlowClip
+copyright: Copyright © 2026 FlowClip
+directories:
+  buildResources: build
+  output: release
+files:
+  - out/**
+  - package.json
+extraResources:
+  - from: output/pdf/FlowClip_User_Guide.pdf
+    to: docs/FlowClip_User_Guide.pdf
+  - from: docs/FlowClip-发布说明.md
+    to: docs/FlowClip-发布说明.md
+asar: true
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: ${productName}-Setup-${version}.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: FlowClip
+  runAfterFinish: true
+  deleteAppDataOnUninstall: false

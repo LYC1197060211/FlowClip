@@ -1,0 +1,44 @@
+{
+  "name": "flowclip",
+  "version": "1.0.0",
+  "description": "FlowClip — 剪贴板、快捷短语、翻译与语音转写一体化桌面效率工具",
+  "author": {
+    "name": "FlowClip"
+  },
+  "license": "MIT",
+  "main": "out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck": "tsc -p tsconfig.node.json --noEmit && tsc -p tsconfig.web.json --noEmit",
+    "smoke": "node scripts/smoke-test.mjs",
+    "build:docs": "python scripts/build-user-guide-pdf.py",
+    "make:icons": "node scripts/make-icons.mjs",
+    "pack:dir": "npm run make:icons && npm run build:docs && electron-vite build && electron-builder --dir",
+    "dist": "npm run make:icons && npm run build:docs && electron-vite build && electron-builder --win nsis"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4",
+    "undici": "^6.21.0",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
